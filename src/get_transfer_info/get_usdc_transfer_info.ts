@@ -9,7 +9,7 @@ const client = createPublicClient({
 // 从 0x099bc3af8a85015d1A39d80c42d10c023F5162F0 转账给 0xA4D65Fd5017bB20904603f0a174BBBD04F81757c 99.12345 USDC 
 // 交易ID：0xd973feef63834ed1e92dd57a1590a4ceadf158f731e44aa84ab5060d17336281
 
-const usecTokenContract = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
+const usdcTokenContract = "0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48";
 const transferEvent = parseAbiItem('event Transfer(address indexed from, address indexed to, uint256 value)');
 
 
@@ -23,7 +23,7 @@ async function main(){
         event: transferEvent,
         fromBlock: startBlock,
         toBlock: latestBlock,
-        address: usecTokenContract
+        address: usdcTokenContract
     });
 
     const logs = await client.getFilterLogs({filter});
